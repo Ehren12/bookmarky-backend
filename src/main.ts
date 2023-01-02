@@ -18,7 +18,7 @@ async function bootstrap() {
   });
   //security
   app.use(helmet());
-  app.enableCors({ origin: process.env.FRONTEND_ORIGIN, credentials: true });
+  app.enableCors({ credentials: true });
   // const httpAdapter = app.get(HttpAdapterHost).httpAdapter;
   // const expressApp = httpAdapter.getHttpServer();
   // expressApp.set('trust proxy', 1);
