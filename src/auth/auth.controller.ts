@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import * as bcrypt from 'bcrypt';
-import { SignupDto } from './dto';
+import { SignupDto } from '../../types/authtypes';
 import { Request, Response } from 'express';
 import { LocalAuthGuard } from './guards/local.auth.guard';
 @Controller('auth')

@@ -2,7 +2,7 @@ import { Injectable, NotAcceptableException } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from '../prisma/prisma.service';
-import { SignupDto } from './dto';
+import { SignupDto } from '../../types/authtypes';
 
 @Injectable()
 export class AuthService {

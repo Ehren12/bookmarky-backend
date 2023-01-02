@@ -10,7 +10,7 @@ import { AuthenticatedGuard } from 'src/auth/guards/authenticated.guard';
 import { BookmarksService } from './bookmarks.service';
 import { GetUser } from 'src/auth/decorators/get_user.decorator';
 import { Body, Param, Req } from '@nestjs/common/decorators';
-import { CreateBookmarkDto, EditBookmarkDto } from './dto';
+import { CreateBookmarkDto, EditBookmarkDto } from '../../types/bookmarks/dto';
 import { Request } from 'express';
 
 @Controller('bookmarks')

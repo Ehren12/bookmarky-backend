@@ -11,7 +11,7 @@ import {
 import { UsersService } from './users.service';
 import { Request } from 'express';
 import { AuthenticatedGuard } from '../auth/guards/authenticated.guard';
-import { UserEditDto } from './dto';
+import { UserEditDto } from '../../types/usertypes';
 import { GetUser } from '../auth/decorators/get_user.decorator';
 @Controller('profile')
 export class ProfileController {

@@ -21,7 +21,7 @@ import Cache from 'cache-manager';
 import { UsersService } from './users.service';
 import { Request } from 'express';
 import { AuthenticatedGuard } from '../auth/guards/authenticated.guard';
-import { UserEditDto } from './dto';
+import { UserEditDto } from '../../types/usertypes';
 import { User } from '@prisma/client';
 
 @Controller('users')

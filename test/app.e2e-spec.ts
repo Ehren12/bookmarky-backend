@@ -4,7 +4,7 @@ import { INestApplication } from '@nestjs/common/interfaces/nest-application.int
 import { Test } from '@nestjs/testing';
 import { PrismaService } from '../src/prisma/prisma.service';
 import { AppModule } from '../src/app.module';
-import { AuthDTO } from '../src/auth/dto';
+import { AuthDTO } from '../types/authtypes';
 import { EditDTO } from 'src/user/dto';
 import { CreateBookmarkDTO, EditBookMarkDTO } from 'src/bookmark/dto';
 
