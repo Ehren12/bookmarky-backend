@@ -19,17 +19,8 @@ async function bootstrap() {
   //security
   app.use(helmet());
   app.enableCors({ origin: process.env.FRONTEND_ORIGIN, credentials: true });
-  const allowedOrigins = [
-    'https://bookmarky-frontend.vercel.app',
-    'http://localhost:3000',
-  ];
-
   app.use((req, res, next) => {
-    if (allowedOrigins.includes(req.headers.origin)) {
-      res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-    } else {
-      res.setHeader('Access-Control-Allow-Origin', 'null');
-    }
+    res.setHeader('Access-Control-Allow-Origin', 'true');
     next();
   });
   // const httpAdapter = app.get(HttpAdapterHost).httpAdapter;
