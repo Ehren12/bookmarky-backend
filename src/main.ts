@@ -31,8 +31,8 @@ async function bootstrap() {
       saveUninitialized: false,
       cookie: {
         maxAge: 1000 * 60 * 60 * 24,
-        sameSite: 'strict',
-        domain: '.railway.app'
+        sameSite: 'lax',
+        domain: '.up.railway.app'
       },
     }),
   );
