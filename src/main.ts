@@ -1,8 +1,7 @@
-import { HttpAdapterHost, NestFactory } from '@nestjs/core';
+import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common/pipes';
 import { AppModule } from './app.module';
 import helmet from 'helmet';
-import * as csurf from 'csurf';
 import * as cookieParser from 'cookie-parser';
 import * as session from 'express-session';
 import * as passport from 'passport';
@@ -32,7 +31,7 @@ async function bootstrap() {
       saveUninitialized: false,
       cookie: {
         maxAge: 1000 * 60 * 60 * 24,
-        sameSite: 'none',
+        sameSite: 'lax',
       },
     }),
   );

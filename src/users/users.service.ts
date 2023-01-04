@@ -1,10 +1,6 @@
-import { CACHE_MANAGER, Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { UserEditDto } from '../../types/usertypes';
-import * as cacheManager from 'cache-manager';
-import { MemoryCache } from 'cache-manager';
-import { User } from '@prisma/client';
-
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}

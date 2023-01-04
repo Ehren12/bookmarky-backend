@@ -9,9 +9,8 @@ import {
 import { AuthenticatedGuard } from 'src/auth/guards/authenticated.guard';
 import { BookmarksService } from './bookmarks.service';
 import { GetUser } from 'src/auth/decorators/get_user.decorator';
-import { Body, Param, Req } from '@nestjs/common/decorators';
+import { Body, Param } from '@nestjs/common/decorators';
 import { CreateBookmarkDto, EditBookmarkDto } from '../../types/bookmarks/dto';
-import { Request } from 'express';
 
 @Controller('bookmarks')
 export class BookmarksController {
@@ -20,7 +19,6 @@ export class BookmarksController {
   @UseGuards(AuthenticatedGuard)
   @Get('')
   getUserBookmarks(@GetUser('userId') userId: string) {
-    console.log(userId);
     return this.bookmarkService.getAllUserBookmarks(userId);
   }
   @UseGuards(AuthenticatedGuard)
@@ -29,7 +27,6 @@ export class BookmarksController {
     @GetUser('userId') userId: string,
     @Param('id') bookmarkId: string,
   ) {
-    console.log('BookmarkId: ' + bookmarkId);
     return this.bookmarkService.getUserBookmarkById(userId, bookmarkId);
   }
   @UseGuards(AuthenticatedGuard)
@@ -39,7 +36,6 @@ export class BookmarksController {
     @GetUser('userId') userId: string,
     @Body() dto: CreateBookmarkDto,
   ) {
-    console.log('Res ' + userId);
     return this.bookmarkService.createBookmark(userId, dto);
   }
 

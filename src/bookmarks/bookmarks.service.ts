@@ -62,7 +62,6 @@ export class BookmarksService {
         ...dto,
       },
     });
-    console.log('Edited: ' + editedBookmark);
     return editedBookmark;
   }
 

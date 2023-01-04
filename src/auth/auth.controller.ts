@@ -1,16 +1,8 @@
-import {
-  Body,
-  Controller,
-  Get,
-  Post,
-  Req,
-  Res,
-  UseGuards,
-} from '@nestjs/common';
+import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import * as bcrypt from 'bcrypt';
 import { SignupDto } from '../../types/authtypes';
-import { Request, Response } from 'express';
+import { Request } from 'express';
 import { LocalAuthGuard } from './guards/local.auth.guard';
 @Controller('auth')
 export class AuthController {
@@ -59,10 +51,8 @@ export class AuthController {
   @Get('/isAuthenticated')
   isAuthenticated(@Req() req: Request) {
     if (req.user) {
-      console.log(true);
       return true;
     } else {
-      console.log(true);
       return false;
     }
   }
