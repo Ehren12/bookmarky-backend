@@ -18,7 +18,7 @@ async function bootstrap() {
   //security
   app.use(helmet());
   app.enableCors({
-    origin: 'https://resilient-panda-a3e80b.netlify.app',
+    origin: process.env.FRONTEND_ORIGIN,
     credentials: true,
   });
   // const httpAdapter = app.get(HttpAdapterHost).httpAdapter;
