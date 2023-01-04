@@ -32,6 +32,7 @@ async function bootstrap() {
       cookie: {
         maxAge: 1000 * 60 * 60 * 24,
         sameSite: 'strict',
+        domain: '.railway.app'
       },
     }),
   );
