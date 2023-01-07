@@ -19,6 +19,7 @@ async function bootstrap() {
   app.use(helmet());
   app.enableCors({
     origin: process.env.FRONTEND_ORIGIN,
+    methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
     credentials: true,
   });
   // const httpAdapter = app.get(HttpAdapterHost).httpAdapter;
@@ -35,11 +36,10 @@ async function bootstrap() {
       proxy: true, // Required for Heroku & Digital Ocean (regarding X-Forwarded-For)
       name: 'user.sid',
       cookie: {
-        secure: true,
-        maxAge: 1000 * 60 * 60 * 24,
-        // sameSite: 'lax',
+        sameSite: false,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 3600000,
         httpOnly: true,
-        sameSite: 'lax',
       },
     }),
   );
