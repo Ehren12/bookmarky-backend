@@ -31,14 +31,14 @@ async function bootstrap() {
         client,
       }),
       resave: false,
-      saveUninitialized: true,
+      saveUninitialized: false,
       proxy: true, // Required for Heroku & Digital Ocean (regarding X-Forwarded-For)
-      name: 'MyCoolWebAppCookieName',
+      name: 'user.sid',
       cookie: {
         secure: true,
         maxAge: 1000 * 60 * 60 * 24,
         // sameSite: 'lax',
-        httpOnly: false,
+        httpOnly: true,
         sameSite: 'lax',
       },
     }),
