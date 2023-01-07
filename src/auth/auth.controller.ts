@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Req,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import * as bcrypt from 'bcrypt';
 import { SignupDto } from '../../types/authtypes';
@@ -26,9 +34,11 @@ export class AuthController {
   //Login
   @UseGuards(LocalAuthGuard)
   @Post('/login')
-  login(@Req() req: Request): object {
+  login(@Req() req: Request, @Res({ passthrough: true }) res): object {
     try {
-      return { User: req.user, msg: 'User logged in' };
+      req.session.save(() => {
+        return { User: req.user, msg: 'User logged in' };
+      });
     } catch (err) {
       return {
         msg: 'An error occured',
