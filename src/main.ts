@@ -39,7 +39,7 @@ async function bootstrap() {
         maxAge: 1000 * 60 * 60 * 24,
         // sameSite: 'lax',
         httpOnly: false,
-        sameSite: 'none',
+        sameSite: 'lax',
       },
     }),
   );
