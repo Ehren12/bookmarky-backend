@@ -36,8 +36,8 @@ async function bootstrap() {
       proxy: true, // Required for Heroku & Digital Ocean (regarding X-Forwarded-For)
       name: 'user.sid',
       cookie: {
-        sameSite: 'none',
-        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        secure: 'auto',
         maxAge: 3600000,
         httpOnly: true,
       },
